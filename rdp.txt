@@ -4,7 +4,7 @@ echo.
 echo		Changing the RDP PORT by ekstrah
 echo		Support OS : Windows 10, Windows 7
 echo.
-set /p port=포트 번호 입력 : 
+set /p port=input port number : 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v PortNumber /t REG_DWORD /d %port% /f
 if errorlevel 1 (
